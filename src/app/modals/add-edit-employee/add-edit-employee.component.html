@@ -1,0 +1,51 @@
+
+<div class="main-modal-div">
+
+
+
+    <div class="modal-header ">
+
+        <h2 class="header-text">Add New Employee</h2>
+        <div  class="close" (click) = "onClose()">&times;</div>
+    </div>
+
+    <mat-dialog-content class="dialog-content">
+
+         
+            <form class="addForm" [formGroup]="addForm" #formDirective="ngForm" >
+        
+       
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">First Name</label>
+                    <input type="text" formControlName = "firstName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Last Name</label>
+                    <input type="text"  formControlName = "lastName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                    <input type="email"  formControlName = "email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Mobile Number</label>
+                    <input type="number"  formControlName = "mobile" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Salary</label>
+                  <input type="number"  formControlName = "salary" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+            
+                <div class="modal-footer">
+                    <button type="button" class="cancel-button" mat-button >Clear</button>
+                    &nbsp; &nbsp;
+                    <button mat-button type="submit" class="submit-button" *ngIf = "!editForm" (click) = "addEmployee()">Add</button>
+                    <button mat-button type="submit" class="submit-button" *ngIf = "editForm" (click) = "updateEmployee()">Update</button>
+                </div>
+         
+
+
+        </form>
+
+    </mat-dialog-content>
+</div>
